@@ -1,25 +1,10 @@
 <?php
-
-/**
- * Project : classifiedengine
- * User: thuytien
- * Date: 10/23/2014
- * Time: 12:36 PM
- */
-class SchPostalAddress extends SchContactPoint
-{
-
-    protected $properties = array(
-        "addressCountry" => "addressCountry",
-        "addressLocality" => "addressLocality",
-        "addressRegion" => "addressRegion",
-        "postOfficeBoxNumber" => "postOfficeBoxNumber",
-        "postalCode" => "postalCode",
-        "streetAddress" => "streetAddress"
-    );
-
-    function __construct()
-    {
-        $this->namespace = 'PostalAddress';
-    }
+class SchPostalAddress extends SchContactPoint{
+	protected $addressCountry	=	'Country';
+	protected $addressLocality	=	'Text';
+	protected $addressRegion	=	'Text';
+	protected $postOfficeBoxNumber	=	'Text';
+	protected $postalCode	=	'Text';
+	protected $streetAddress	=	'Text';
+	function __construct(){$this->namespace = "PostalAddress";}
 }

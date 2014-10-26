@@ -1,48 +1,35 @@
 <?php
-
-/**
- * Project : classifiedengine
- * User: thuytien
- * Date: 10/23/2014
- * Time: 12:07 PM
- */
-class SchOrganization extends SchThing
-{
-    protected $properties = array(
-        "address" => "address",
-        "aggregateRating" => "aggregateRating",
-        "brand" => "brand",
-        "contactPoint" => "contactPoint",
-        "department" => "department",
-        "dissolutionDate" => "dissolutionDate",
-        "duns" => "duns",
-        "email" => "email",
-        "employee" => "employee",
-        "event" => "event",
-        "faxNumber" => "faxNumber",
-        "founder" => "founder",
-        "foundingDate" => "foundingDate",
-        "globalLocationNumber" => "globalLocationNumber",
-        "hasPOS" => "hasPOS",
-        "interactionCount" => "interactionCount",
-        "isicV4" => "isicV4",
-        "legalName" => "legalName",
-        "location" => "location",
-        "logo" => "logo",
-        "makesOffer" => "makesOffer",
-        "member" => "member",
-        "memberOf" => "memberOf",
-        "naics" => "naics",
-        "owns" => "owns",
-        "review" => "review",
-        "taxID" => "taxID",
-        "telephone" => "telephone",
-        "vatID" => "vatID",
-    );
-
-    function __construct()
-    {
-        $this->namespace = 'Organization';
-
-    }
+class SchOrganization extends SchThing{
+	protected $address	=	'PostalAddress';
+	protected $aggregateRating	=	'AggregateRating';
+	protected $brand	=	'Organization,Brand';
+	protected $contactPoint	=	'ContactPoint';
+	protected $department	=	'Organization';
+	protected $dissolutionDate	=	'Date';
+	protected $duns	=	'Text';
+	protected $email	=	'Text';
+	protected $employee	=	'Person';
+	protected $event	=	'Event';
+	protected $faxNumber	=	'Text';
+	protected $founder	=	'Person';
+	protected $foundingDate	=	'Date';
+	protected $globalLocationNumber	=	'Text';
+	protected $hasPOS	=	'Place';
+	protected $interactionCount	=	'Text';
+	protected $isicV4	=	'Text';
+	protected $legalName	=	'Text';
+	protected $location	=	'PostalAddress,Place';
+	protected $logo	=	'URL,ImageObject';
+	protected $makesOffer	=	'Offer';
+	protected $member	=	'Person,Organization';
+	protected $memberOf	=	'ProgramMembership,Organization';
+	protected $naics	=	'Text';
+	protected $owns	=	'Product,OwnershipInfo';
+	protected $review	=	'Review';
+	protected $seeks	=	'Demand';
+	protected $subOrganization	=	'Organization';
+	protected $taxID	=	'Text';
+	protected $telephone	=	'Text';
+	protected $vatID	=	'Text';
+	function __construct(){$this->namespace = "Organization";}
 }
