@@ -14,6 +14,11 @@ Example
 IN CODE : 
 ```PHP
 <?php require_once 'autoload.php'; ?>
+<div class="price-product" <?php echo Schema::Offer()?>>
+    <div class="price-arrow"><i class="fa fa-backward"></i></div>
+    <span <?php echo Schema::Offer("price", "12"); ?>>This is price</span>
+    <span <?php echo Schema::Offer("priceCurrency", "USD"); ?>>$</span>
+</div>
 <div  <?php echo Schema::Product(); ?> >
     <p <?php echo Schema::Product("name"); ?> >This is product name</p>
     <img <?php echo Schema::Product("image"); ?> src="link_to_image">
@@ -29,6 +34,7 @@ IN CODE :
         <img <?php echo Schema::Organization("logo") ?> src="link_to_logo">
     </div>
     <div <?php echo Schema::Product("review") ?> >
+        <p <?php echo Schema::Review("author") ?>>Duoc nguyen</p>
         <p <?php echo Schema::Review("reviewBody") ?>>This is my review about this product, so good</p>
         <div <?php echo Schema::Review("reviewRating") ?>>
             <div <?php echo Schema::Rating() ?>>
@@ -43,23 +49,29 @@ IN CODE :
 
 RESULT
 ```html
+<div class="price-product" itemscope itemtype="http//schema.org/Offer">
+    <div class="price-arrow"><i class="fa fa-backward"></i></div>
+    <span itemprop="price"  content="12" >This is price</span>
+    <span itemprop="priceCurrency"  content="USD" >$</span>
+</div>
 <div  itemscope itemtype="http//schema.org/Product" >
     <p itemprop="name"  >This is product name</p>
     <img itemprop="image"  src="link_to_image">
     <p itemprop="description"  > this is product description</p>
     <p itemprop="sku" >This is SKU</p>
-    <div itemprop="aggregateRating" itemscope itemtype="http//schema.org/AggregateRating">
+    <div itemscope itemtype="http//schema.org/AggregateRating"itemprop="aggregateRating" >
         <p itemprop="ratingCount" >12</p>
         <p itemprop="reviewCount" >14</p>
     </div>
-    <div itemprop="brand" itemscope itemtype="http//schema.org/Organization">
+    <div itemscope itemtype="http//schema.org/Organization"itemprop="brand" >
         <p itemprop="address" >Address of you org</p>
         <p itemprop="email" >Org's email</p>
         <img itemprop="logo"  src="link_to_logo">
     </div>
-    <div itemprop="review" itemscope itemtype="http//schema.org/Review" >
+    <div itemscope itemtype="http//schema.org/Review"itemprop="review"  >
+        <p itemscope itemtype="http//schema.org/Organization"itemprop="author" >Duoc nguyen</p>
         <p itemprop="reviewBody" >This is my review about this product, so good</p>
-        <div itemprop="reviewRating" itemscope itemtype="http//schema.org/Rating">
+        <div itemscope itemtype="http//schema.org/Rating"itemprop="reviewRating" >
             <div itemscope itemtype="http//schema.org/Rating">
                 <p itemprop="bestRating" >10</p>
                 <p itemprop="ratingValue" >6</p>
