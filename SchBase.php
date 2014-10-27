@@ -45,20 +45,29 @@ abstract class SchBase implements SchBaseInterface
      * @param $prop
      * @return string
      */
-    public function prop($prop)
+    public function prop($prop, $val = null)
     {
-        if(is_string($prop)) {
-            if (isset($this->properties[$prop])) {
-                return sprintf("itemprop=\"%1s\"", $this->properties[$prop]);
-            }
-        }elseif(is_array($prop)){
-            if (isset($this->properties[$prop['prop']])) {
-                return sprintf("<span itemprop=\"%1s\">%2s</span>", $this->properties[$prop['prop']], $prop['value']);
+        $attr = '';
+        if (isset($prop)) {
+            if (property_exists($this, $prop)) {
+                $props = explode(",", $this->$prop);
+                $parentName = "Sch" . $props[0];
+                if (class_exists($parentName)) {
+                    $attr .= $parentName::getInstance()->scope();
+                }
+                $attr = sprintf(" itemprop=\"%1s\" ", $prop) . $attr;
             }
         }
-        return '';
-    }
 
+        if (isset($val)) {
+            $attr .= $this->wrapPropVals($prop, $val);
+        }
+        return trim($attr);
+    }
+    function wrapPropVals($prop, $val)
+    {
+        return 'content="' . $val . '"';
+    }
     /**
      * @return string
      */

@@ -1,5 +1,5 @@
 <?php
-class SchThing extends SchThing{
+class SchThing extends SchBase{
 	protected $additionalType	=	'URL';
 	protected $alternateName	=	'Text';
 	protected $description	=	'Text';
