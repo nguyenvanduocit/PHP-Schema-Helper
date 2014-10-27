@@ -1,5 +1,5 @@
 <?php
-class SchAction extends SchThings{
+class SchAction extends SchThing{
 	protected $actionStatus	=	'ActionStatusType';
 	protected $agent	=	'Organization,Person';
 	protected $endTime	=	'DateTime';

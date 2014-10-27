@@ -66,7 +66,7 @@ abstract class SchBase implements SchBaseInterface
     }
     function wrapPropVals($prop, $val)
     {
-        return 'content="' . $val . '"';
+        return ' content="' . $val . '"';
     }
     /**
      * @return string

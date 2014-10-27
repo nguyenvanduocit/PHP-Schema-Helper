@@ -1,5 +1,5 @@
 <?php require_once 'autoload.php'; ?>
-<div class="price-product" <?php echo Schema::Offer()?>>
+    <div class="price-product" <?php echo Schema::Offer()?>>
     <div class="price-arrow"><i class="fa fa-backward"></i></div>
     <span <?php echo Schema::Offer("price", "12"); ?>>This is price</span>
     <span <?php echo Schema::Offer("priceCurrency", "USD"); ?>>$</span>
@@ -30,3 +30,5 @@
         </div>
     </div>
 </div>
+
+<?php echo Schema::WriteAction("language","US"); ?>
