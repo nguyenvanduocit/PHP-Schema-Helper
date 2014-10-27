@@ -41,6 +41,7 @@ IN CODE :
     </div>
 </div>
 </pre>
+```
 
 RESULT
 ```html
@@ -71,3 +72,4 @@ RESULT
     </div>
 </div>
 </pre>
+```
