@@ -13,7 +13,6 @@ Example
 
 IN CODE : 
 ```PHP
-<pre>
 <?php require_once 'autoload.php'; ?>
 <div  <?php echo Schema::Product(); ?> >
     <p <?php echo Schema::Product("name"); ?> >This is product name</p>
@@ -40,12 +39,10 @@ IN CODE :
         </div>
     </div>
 </div>
-</pre>
 ```
 
 RESULT
 ```html
-<pre>
 <div  itemscope itemtype="http//schema.org/Product" >
     <p itemprop="name"  >This is product name</p>
     <img itemprop="image"  src="link_to_image">
@@ -71,5 +68,4 @@ RESULT
         </div>
     </div>
 </div>
-</pre>
 ```
