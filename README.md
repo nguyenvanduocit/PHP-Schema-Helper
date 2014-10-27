@@ -12,7 +12,7 @@ Example
 ================
 
 IN CODE : 
-==
+```PHP
 <pre>
 <?php require_once 'autoload.php'; ?>
 <div  <?php echo Schema::Product(); ?> >
@@ -41,8 +41,9 @@ IN CODE :
     </div>
 </div>
 </pre>
-RESULT :
-==
+
+RESULT
+```html
 <pre>
 <div  itemscope itemtype="http//schema.org/Product" >
     <p itemprop="name"  >This is product name</p>
